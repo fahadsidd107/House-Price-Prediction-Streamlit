@@ -6,7 +6,7 @@ Created on Tue Mar  5 14:08:44 2024
 """
 
 import pandas as pd
-import joblib
+import pickle
 import streamlit as st
 from PIL import Image
 from sklearn.preprocessing import OneHotEncoder
@@ -29,7 +29,7 @@ def transform_data(transformer, data):
     return transformed_df
 
 # Load the trained model
-loaded_model = joblib.load("best_model.sav")
+loaded_model = pickle.load("best_model.sav")
 
 # Function to predict house prices
 def house_price_prediction(input_data):
